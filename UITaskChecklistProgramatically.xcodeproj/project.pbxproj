@@ -16,6 +16,7 @@
 		A064844E29D4384100D25F03 /* UITaskChecklistProgramaticallyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064844D29D4384100D25F03 /* UITaskChecklistProgramaticallyTests.swift */; };
 		A064845829D4384100D25F03 /* UITaskChecklistProgramaticallyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064845729D4384100D25F03 /* UITaskChecklistProgramaticallyUITests.swift */; };
 		A064845A29D4384100D25F03 /* UITaskChecklistProgramaticallyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064845929D4384100D25F03 /* UITaskChecklistProgramaticallyUITestsLaunchTests.swift */; };
+		A064846729D43D3000D25F03 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A064846629D43D3000D25F03 /* MyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A064845329D4384100D25F03 /* UITaskChecklistProgramaticallyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITaskChecklistProgramaticallyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A064845729D4384100D25F03 /* UITaskChecklistProgramaticallyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITaskChecklistProgramaticallyUITests.swift; sourceTree = "<group>"; };
 		A064845929D4384100D25F03 /* UITaskChecklistProgramaticallyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITaskChecklistProgramaticallyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A064846629D43D3000D25F03 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				A064843F29D4384000D25F03 /* Assets.xcassets */,
 				A064844129D4384000D25F03 /* LaunchScreen.storyboard */,
 				A064844429D4384000D25F03 /* Info.plist */,
+				A064846629D43D3000D25F03 /* MyTableViewCell.swift */,
 			);
 			path = UITaskChecklistProgramatically;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A064843B29D4383D00D25F03 /* ViewController.swift in Sources */,
+				A064846729D43D3000D25F03 /* MyTableViewCell.swift in Sources */,
 				A064843729D4383D00D25F03 /* AppDelegate.swift in Sources */,
 				A064843929D4383D00D25F03 /* SceneDelegate.swift in Sources */,
 			);
