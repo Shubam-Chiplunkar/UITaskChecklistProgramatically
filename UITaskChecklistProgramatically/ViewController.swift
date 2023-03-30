@@ -25,7 +25,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         topLabel = UILabel()
         topLabel.backgroundColor = .black
         topLabel.translatesAutoresizingMaskIntoConstraints = false
-       
+        topLabel.text = "Record List"
+        topLabel.textColor = .white
+        topLabel.font = UIFont(name: "Arail", size: 120)
         view.addSubview(topLabel)
         NSLayoutConstraint.activate([
             topLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -39,7 +41,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableViews = UITableView()
         tableViews.register(MyTableViewCell.self, forCellReuseIdentifier: "MyTableViewCell")
         tableViews.translatesAutoresizingMaskIntoConstraints = false
-//        tableViews.rowHeight = UITableView.automaticDimension
         tableViews.dataSource = self
         tableViews.delegate = self
         tableViews.insetsLayoutMarginsFromSafeArea = true
