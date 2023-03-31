@@ -20,6 +20,14 @@ class MyTableViewCell: UITableViewCell {
     var label100        : UILabel!
     var labelTitle      : UILabel!
     var labelSubTitle   : UILabel!
+    var stackView       : UIStackView!
+    var labelTotalCost  : UILabel!
+    var labelTotal      : UILabel!
+    var labelFundedCost : UILabel!
+    var labelFunded     : UILabel!
+    var labelTimeLeft   : UILabel!
+    var labelTime       : UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,6 +54,7 @@ class MyTableViewCell: UITableViewCell {
         loadTitleLabel()
         loadLabelSubTitle()
         loadButtonPledge()
+        loadStackView()
 
     }
     
@@ -88,13 +97,30 @@ class MyTableViewCell: UITableViewCell {
         ])
     }
     
+    func loadButtonPledge(){
+        buttonPledege = UIButton()
+        buttonPledege.translatesAutoresizingMaskIntoConstraints = false
+        buttonPledege.setTitle("PLEDGE", for: .normal)
+        buttonPledege.backgroundColor = .white
+        buttonPledege.titleLabel?.font = UIFont(name: "Arial", size: 8)
+        buttonPledege.layer.cornerRadius = 10
+        buttonPledege.setTitleColor( .init(red: (24.0 / 255.0), green: (68.0 / 255.0), blue: (77.0 / 255.0), alpha: 1), for: .normal)
+        bottomView.addSubview(buttonPledege)
+        NSLayoutConstraint.activate([
+            buttonPledege.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -10),
+            buttonPledege.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -20),
+            buttonPledege.heightAnchor.constraint(equalToConstant: 30),
+            buttonPledege.widthAnchor.constraint(equalToConstant: 60)
+        ])
+        
+    }
+
     
     func loadRightView(){
         rightView = UIView()
         rightView.translatesAutoresizingMaskIntoConstraints = false
         rightView.backgroundColor = .init(red: (24.0 / 255.0), green: (68.0 / 255.0), blue: (77.0 / 255.0), alpha: 1)
         rightView.layer.cornerRadius = 30
-//        rightView.layer.shouldRasterize = true
         rightView.clipsToBounds = true
         self.addSubview(rightView)
         NSLayoutConstraint.activate([
@@ -126,7 +152,6 @@ class MyTableViewCell: UITableViewCell {
         leftView.translatesAutoresizingMaskIntoConstraints = false
         leftView.backgroundColor = .white
         mainView.addSubview(leftView)
-//        self.leftView.layer.zPosition = -1
         leftView.layer.cornerRadius = 10
         NSLayoutConstraint.activate([
             leftView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 10),
@@ -135,6 +160,23 @@ class MyTableViewCell: UITableViewCell {
             leftView.heightAnchor.constraint(equalToConstant: 90),
         ])
 
+    }
+    
+    func loadStackView(){
+        
+        stackView = UIStackView()
+        bottomView.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.backgroundColor = .white
+        stackView.spacing = 20
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 10),
+            stackView.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant:  -10),
+            stackView.trailingAnchor.constraint(equalTo: buttonPledege.leadingAnchor, constant: -10),
+            stackView.topAnchor.constraint(equalTo: leftView.bottomAnchor, constant: 10)
+        ])
     }
     
     func loadHeartButton(){
@@ -164,7 +206,6 @@ class MyTableViewCell: UITableViewCell {
             labelTitle.topAnchor.constraint(equalTo: leftView.topAnchor, constant: 10),
             labelTitle.leadingAnchor.constraint(equalTo: leftView.leadingAnchor, constant: 10),
             labelTitle.trailingAnchor.constraint(equalTo: buttonHeart.leadingAnchor, constant: -10),
-//            label100.widthAnchor.constraint(equalToConstant: 100)
         ])
     }
     
@@ -181,29 +222,7 @@ class MyTableViewCell: UITableViewCell {
             labelSubTitle.trailingAnchor.constraint(equalTo: buttonHeart.leadingAnchor, constant: -10)
         ])
     }
-    
-    func loadButtonPledge(){
-        buttonPledege = UIButton()
-        buttonPledege.translatesAutoresizingMaskIntoConstraints = false
-        buttonPledege.setTitle("PLEDGE", for: .normal)
-        buttonPledege.backgroundColor = .white
-        buttonPledege.titleLabel?.font = UIFont(name: "Arial", size: 8)
-        buttonPledege.layer.cornerRadius = 10
-        buttonPledege.setTitleColor( .init(red: (24.0 / 255.0), green: (68.0 / 255.0), blue: (77.0 / 255.0), alpha: 1), for: .normal)
-        bottomView.addSubview(buttonPledege)
-        NSLayoutConstraint.activate([
-            buttonPledege.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -10),
-            buttonPledege.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -20),
-            buttonPledege.heightAnchor.constraint(equalToConstant: 30),
-            buttonPledege.widthAnchor.constraint(equalToConstant: 60)
-        ])
-        
-    }
-   
-    
- 
-    
-  
+
     
     
 }
